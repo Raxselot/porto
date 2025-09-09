@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Code2, Rocket, ShieldCheck, Sparkles, Gauge, Globe, Mail, Phone, CheckCircle2, ArrowRight, Star } from "lucide-react";
@@ -11,13 +13,13 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 
 // ------- EINSTELLUNGEN (bitte anpassen) -------
 const CONFIG = {
-  name: "Dein Name",
-  brand: "deinname.dev",
-  email: "kontakt@deinname.dev",
-  phone: "+49 151 00000000", // optional
+  name: "Christoph Rosner",
+  brand: "Web entwicklungen",
+  email: "rosner-christoph@web.de",
+  phone: "+49 0176 61223032", // optional
   location: "Augsburg & Remote",
   // Tip: Erstelle kostenlos ein Formspree-Formular und trage hier die ID ein, z.B. "xqkwylnn"
-  formspreeId: "",
+  formspreeId: "xqkwylnn",
 };
 // ----------------------------------------------
 
@@ -140,41 +142,60 @@ function LogosBar() {
 function Leistungen() {
   const cards = [
     {
-      icon: <Globe className="h-5 w-5" />, title: "Websites & Web-Apps",
+      icon: <Globe className="h-5 w-5" />,
+      title: "Websites & Web-Apps",
       text: "Individuelle Frontends mit React/Next.js. Design, Development, Hosting – alles aus einer Hand.",
-      bullets: ["Responsive UI/UX", "CMS auf Wunsch", "Barrierearm"]
+      bullets: ["Responsive UI/UX", "CMS auf Wunsch", "Barrierearm"],
     },
     {
-      icon: <Sparkles className="h-5 w-5" />, title: "Brand & Konversion",
-      text: "Klares Messaging, psychologisch gute Nutzerführung und A/B‑Tests für mehr Leads.",
-      bullets: ["Copywriting", "Designsystem", "Tracking & A/B"]
+      icon: <Sparkles className="h-5 w-5" />,
+      title: "Brand & Konversion",
+      text: "Klares Messaging, psychologisch gute Nutzerführung und A/B-Tests für mehr Leads.",
+      bullets: ["Copywriting", "Designsystem", "Tracking & A/B"],
     },
     {
-      icon: <ShieldCheck className="h-5 w-5" />, title: "Performance & SEO",
-      text: "Technisches SEO, rasante Ladezeiten und saubere Struktur für Top‑Rankings.",
-      bullets: ["Core Web Vitals", "Strukturierte Daten", "On‑Page SEO"]
+      icon: <ShieldCheck className="h-5 w-5" />,
+      title: "Performance & SEO",
+      text: "Technisches SEO, rasante Ladezeiten und saubere Struktur für Top-Rankings.",
+      bullets: ["Core Web Vitals", "Strukturierte Daten", "On-Page SEO"],
     },
   ];
   return (
     <Section id="leistungen" className="py-14">
       <div className="mb-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Leistungen</h2>
-        <p className="mt-2 text-slate-300">Alles, was du für eine überzeugende Präsenz brauchst.</p>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Leistungen
+        </h2>
+        <p className="mt-2 text-slate-300">
+          Alles, was du für eine überzeugende Präsenz brauchst.
+        </p>
       </div>
       <div className="grid gap-6 md:grid-cols-3">
         {cards.map((c) => (
-          <Card key={c.title} className="border-white/10 bg-white/5">
+          <Card
+            key={c.title}
+            className="border-white/10 bg-white/5"
+          >
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="rounded-xl bg-gradient-to-br from-sky-400/30 to-violet-500/30 p-2 text-sky-300">{c.icon}</div>
-                <h3 className="text-xl font-semibold">{c.title}</h3>
+                <div className="rounded-xl bg-gradient-to-br from-sky-400/30 to-violet-500/30 p-2 text-sky-300">
+                  {c.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-white">
+                  {c.title}
+                </h3>
               </div>
             </CardHeader>
             <CardContent className="text-slate-300">
               <p>{c.text}</p>
               <ul className="mt-4 space-y-2">
                 {c.bullets.map((b) => (
-                  <li key={b} className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-sky-300" /> {b}</li>
+                  <li
+                    key={b}
+                    className="flex items-center gap-2"
+                  >
+                    <CheckCircle2 className="h-4 w-4 text-sky-300" /> {b}
+                  </li>
                 ))}
               </ul>
             </CardContent>
@@ -185,36 +206,52 @@ function Leistungen() {
   );
 }
 
+
 function Projekte() {
   const items = [
     { name: "Laborzähler-App", tag: "Web-App", result: "+120% Effizienz" },
-    { name: "Shop-Frontend", tag: "E‑Commerce", result: "+38% Conversion" },
-    { name: "Scanner‑Dashboard", tag: "B2B Portal", result: "-70% Prozesszeit" },
-    { name: "Statistik‑Portal", tag: "Data", result: "+3x Page Speed" },
-    { name: "QR‑Generator", tag: "Tooling", result: "+80% Nutzung" },
+    { name: "Shop-Frontend", tag: "E-Commerce", result: "+38% Conversion" },
+    { name: "Scanner-Dashboard", tag: "B2B Portal", result: "-70% Prozesszeit" },
+    { name: "Statistik-Portal", tag: "Data", result: "+3x Page Speed" },
+    { name: "QR-Generator", tag: "Tooling", result: "+80% Nutzung" },
     { name: "Landing-Kampagne", tag: "Marketing", result: "+2.1x Leads" },
   ];
   return (
     <Section id="projekte" className="py-14">
       <div className="mb-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Ausgewählte Projekte</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Ausgewählte Projekte
+        </h2>
         <p className="mt-2 text-slate-300">Echte Lösungen. Messbare Resultate.</p>
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((p) => (
-          <Card key={p.name} className="group border-white/10 bg-gradient-to-br from-white/5 to-white/0 overflow-hidden">
+          <Card
+            key={p.name}
+            className="group border-white/10 bg-gradient-to-br from-white/5 to-white/0 overflow-hidden"
+          >
             <CardContent className="p-0">
               <div className="h-40 bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-sky-400/15 via-blue-500/15 to-violet-500/15" />
               <div className="p-5">
                 <div className="flex items-center gap-2">
-                  <Badge className="bg-white/10 text-white border-white/10">{p.tag}</Badge>
+                  <Badge className="bg-white/10 text-white border-white/10">
+                    {p.tag}
+                  </Badge>
                 </div>
-                <h3 className="mt-2 text-xl font-semibold tracking-tight">{p.name}</h3>
-                <p className="mt-1 text-sm text-slate-300">Ergebnis: <span className="font-medium text-sky-300">{p.result}</span></p>
+                <h3 className="mt-2 text-xl font-semibold tracking-tight text-white">
+                  {p.name}
+                </h3>
+                <p className="mt-1 text-sm text-slate-300">
+                  Ergebnis:{" "}
+                  <span className="font-medium text-sky-300">{p.result}</span>
+                </p>
               </div>
             </CardContent>
             <CardFooter className="justify-end p-5 pt-0">
-              <a href="#kontakt" className="text-sm inline-flex items-center gap-1 hover:underline">
+              <a  
+                href="#kontakt"
+                className="text-sm inline-flex items-center gap-1 hover:underline text-slate-300"
+              >
                 Details anfragen <ArrowRight className="h-4 w-4" />
               </a>
             </CardFooter>
@@ -224,6 +261,7 @@ function Projekte() {
     </Section>
   );
 }
+
 
 function Prozess() {
   const steps = [
@@ -253,9 +291,9 @@ function Prozess() {
 
 function Testimonials() {
   const ts = [
-    { name: "M. Weber", role: "Inhaber, Local Shop", quote: "Unsere neue Seite bringt uns endlich Anfragen. Super schnell und top umgesetzt.", stars: 5 },
+    { name: "K. Bürger", role: "Inhaber, Modern Man Hair", quote: "Top Arbeit, von nichts zu einer Seite die uns einiges erleichter geld einspaart, und sogar neue Kunden bringt.", stars: 5 },
     { name: "S. Bauer", role: "COO, Tech Startup", quote: "Klare Kommunikation, saubere Architektur – und sichtbar bessere Conversion.", stars: 5 },
-    { name: "A. Richter", role: "Leitung, B2B", quote: "Von der Idee bis zum Launch in Rekordzeit. Absolute Empfehlung!", stars: 5 },
+    { name: "Annonym", role: "Leitung, B2B", quote: "Von der Idee bis zum Launch in Rekordzeit. Absolute Empfehlung!", stars: 5 },
   ];
   return (
     <Section className="py-14">
@@ -342,49 +380,88 @@ function Kontakt() {
   return (
     <Section id="kontakt" className="py-14">
       <div className="mb-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Sag kurz Hallo</h2>
-        <p className="mt-2 text-slate-300">Kostenlose Erstberatung. Antwort in der Regel binnen 24h.</p>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Sag kurz Hallo
+        </h2>
+        <p className="mt-2 text-slate-300">
+          Kostenlose Erstberatung. Antwort in der Regel binnen 24h.
+        </p>
       </div>
       <div className="grid gap-6 md:grid-cols-5">
         <Card className="md:col-span-3 border-white/10 bg-white/5">
           <CardHeader>
-            <div className="flex items-center gap-2"><Mail className="h-5 w-5 text-sky-300" />
-              <h3 className="text-xl font-semibold">Projektanfrage</h3>
+            <div className="flex items-center gap-2">
+              <Mail className="h-5 w-5 text-sky-300" />
+              <h3 className="text-xl font-semibold text-white">Projektanfrage</h3>
             </div>
           </CardHeader>
           <CardContent>
             <form onSubmit={onSubmit} className="grid gap-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" name="name" placeholder="Max Mustermann" required />
+                  <Label htmlFor="name" className="text-white">Name</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Max Mustermann"
+                    required
+                    className="text-white placeholder:text-slate-400"
+                  />
                 </div>
                 <div>
-                  <Label htmlFor="email">E‑Mail</Label>
-                  <Input id="email" name="email" placeholder="max@example.com" type="email" required />
+                  <Label htmlFor="email" className="text-white">E-Mail</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    placeholder="max@example.com"
+                    type="email"
+                    required
+                    className="text-white placeholder:text-slate-400"
+                  />
                 </div>
               </div>
               <div>
-                <Label htmlFor="budget">Budget (optional)</Label>
-                <Input id="budget" name="budget" placeholder="z.B. 2.500–6.000 €" />
+                <Label htmlFor="budget" className="text-white">Budget (optional)</Label>
+                <Input
+                  id="budget"
+                  name="budget"
+                  placeholder="z.B. 2.500–6.000 €"
+                  className="text-white placeholder:text-slate-400"
+                />
               </div>
               <div>
-                <Label htmlFor="message">Kurzbeschreibung</Label>
-                <Textarea id="message" name="message" placeholder="Was soll die Website erreichen?" required />
+                <Label htmlFor="message" className="text-white">Kurzbeschreibung</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Was soll die Website erreichen?"
+                  required
+                  className="text-white placeholder:text-slate-400"
+                />
               </div>
               <div className="flex items-center justify-between gap-3">
                 <Button type="submit" disabled={status === "sending"}>
                   {status === "sending" ? "Senden…" : "Nachricht senden"}
                 </Button>
                 <p className="text-sm text-slate-400">
-                  oder mail an <a className="underline" href={`mailto:${CONFIG.email}`}>{CONFIG.email}</a>
+                  oder mail an{" "}
+                  <a className="underline" href={`mailto:${CONFIG.email}`}>
+                    {CONFIG.email}
+                  </a>
                 </p>
               </div>
               {status === "ok" && (
-                <p className="text-sm text-emerald-400">Danke! Deine Nachricht ist angekommen. Ich melde mich zeitnah.</p>
+                <p className="text-sm text-emerald-400">
+                  Danke! Deine Nachricht ist angekommen. Ich melde mich zeitnah.
+                </p>
               )}
               {status === "error" && (
-                <p className="text-sm text-red-400">Ups, etwas lief schief. Schreib mir direkt an <a className="underline" href={`mailto:${CONFIG.email}`}>{CONFIG.email}</a>.</p>
+                <p className="text-sm text-red-400">
+                  Ups, etwas lief schief. Schreib mir direkt an{" "}
+                  <a className="underline" href={`mailto:${CONFIG.email}`}>
+                    {CONFIG.email}
+                  </a>.
+                </p>
               )}
             </form>
           </CardContent>
@@ -395,7 +472,7 @@ function Kontakt() {
               <div className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-sky-300" />
                 <div>
-                  <p className="font-semibold">Direktkontakt</p>
+                  <p className="font-semibold text-white">Direktkontakt</p>
                   <p className="text-sm text-slate-300">{CONFIG.phone}</p>
                   <p className="text-sm text-slate-300">{CONFIG.email}</p>
                 </div>
@@ -408,11 +485,17 @@ function Kontakt() {
           </Card>
           <Card className="border-white/10 bg-white/5">
             <CardContent className="pt-6">
-              <p className="font-semibold">Warum ich?</p>
+              <p className="font-semibold text-white">Warum ich?</p>
               <ul className="mt-3 space-y-2 text-sm text-slate-300">
-                <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-sky-300" /> Full‑Stack Know‑how (Java, JS, Node, Docker, PostgreSQL)</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-sky-300" /> UX‑starkes Frontend (React, Tailwind, shadcn)</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-sky-300" /> Agil, transparent, zuverlässig</li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-sky-300" /> Full-Stack Know-how (Java, JS, Node, Docker, PostgreSQL)
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-sky-300" /> UX-starkes Frontend (React, Tailwind, shadcn)
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-sky-300" /> Agil, transparent, zuverlässig
+                </li>
               </ul>
             </CardContent>
           </Card>
@@ -420,6 +503,7 @@ function Kontakt() {
       </div>
     </Section>
   );
+  
 }
 
 function Footer() {
